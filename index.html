@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        font-family: "Comic Sans MS", cursive, sans-serif;
+        font-size: 1.5rem;
+      }
+      body {
+        display: flex;
+        height: 100vh;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      2020 is
+      <i id="time">ööö ootas,</i>
+      seconds away! :DD
+    </div>
+    <script>
+      // 2020
+      const targetDate = new Date(Date.parse("2020-01-01T00:00:00+0000"));
+
+      const targetElement = document.querySelector("#time");
+
+      setInterval(() => {
+        const now = new Date();
+        const secondsTo2020 = Math.round(
+          (targetDate.getTime() - now.getTime()) / 1000
+        );
+        targetElement.innerHTML = `${secondsTo2020}`;
+      }, 1000);
+
+      console.log("Ei vitsi, kurkkasit konsoliin! :DD");
+    </script>
+  </body>
+</html>
